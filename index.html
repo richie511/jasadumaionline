@@ -1,0 +1,593 @@
+<!doctype html>
+<html>
+<head>
+<title>SOS STDI DUMAI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="jquery-1.10.2.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+<style>
+body,html {
+	background-color : #453D9B;
+	overflow-x:hidden;overflow-y:hidden;
+    -khtml-user-drag: none; 
+    -moz-user-drag: none; 
+    -ms-user-drag: none; 
+    user-drag: none; 
+    -webkit-user-drag: none; 
+	  
+    -webkit-font-smoothing: antialiased; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    -webkit-background-size: 100%; 
+    -moz-background-size: 100%; 
+    -o-background-size: 100%;
+	background-size : 100%; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover;
+	background-size : cover; 
+    -webkit-user-select: none; 
+    -webkit-touch-callout: none; 
+    -webkit-tap-highlight: rgba(0,0,0,0); 
+    -webkit-user-select: none; 
+    -webkit-touch-callout: none; 
+    -webkit-tap-highlight: rgba(0,0,0,0); 
+	
+}
+
+  a {
+    color:#fff;
+    text-decoration:none;
+  }
+  a:hover {
+    background:#257080;
+  }
+  a:link { -webkit-tap-highlight-color: #514dd9; } 
+
+  #main {
+  	margin: auto; 
+	}
+
+  #outer-circle {
+  	-webkit-box-shadow: 0 0 50px 10px #453D9B;
+  	-moz-box-shadow: 0 0 50px 10px #453D9B;
+  	box-shadow: 0 0 50px 10px #453D9B;
+  	border: 10px solid #ECEBFA;
+  	border-top-color:#746EBB;
+  	border-bottom-color:#746EBB;
+  	margin: 20% auto;
+  	text-align:center;
+  	background: -webkit-linear-gradient(top, #ffffff 48%, #ecebfa 49%, #ecebfa 51%, #fff 52%);
+  	background: -moz-linear-gradient(top, #ffffff 48%, #ecebfa 49%, #ecebfa 51%, #fff 52%);
+  	background: linear-gradient(to bottom, #ffffff 48%, #ecebfa 49%, #ecebfa 51%, #fff 52%);
+  	width: 220px;
+  	height: 220px;
+	
+  	-webkit-border-radius: 220px;
+  	-moz-border-radius: 220px;
+  	border-radius: 220px;
+	
+  	-webkit-animation:turning_cw 5s infinite;
+  	-moz-animation:turning_cw 5s infinite;
+  	animation:turning_cw 5s infinite;
+  	position:relative;
+  	opacity: 0.7; }
+  	
+  #content:hover {
+	cursor:pointer;
+	
+	-webkit-animation: pulse2 2s linear infinite;
+	-moz-animation: pulse2 2s linear infinite;
+	-ms-animation: pulse2 2s linear infinite;
+	animation: pulse2 2s linear infinite;
+  }
+  #outer-circle:hover {
+  	-webkit-box-shadow: 0 0 100px 15px #453D9B;
+  	-moz-box-shadow: 0 0 100px 15px #453D9B;
+  	box-shadow: 0 0 100px 15px #453D9B; }
+  	
+  #inner-circle {
+  	border: 10px solid #ECEBFA;
+  	border-left-color:#746EBB;
+  	border-right-color:#746EBB;
+	
+  	-webkit-transform: rotate(360deg);
+  	-moz-transform: rotate(360deg);
+  	transform: rotate(360deg);
+	
+  	position:absolute;
+	
+  	background: -webkit-linear-gradient(top, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
+  	background: -moz-linear-gradient(top, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
+  	background: linear-gradient(to bottom, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
+	
+  	margin: 10px;
+  	width: 180px;
+  	height: 180px;
+	
+  	-webkit-border-radius: 180px;
+  	-moz-border-radius: 180px;
+  	border-radius: 180px;
+	
+  	-webkit-animation:turning_acw 3s infinite;
+  	-moz-animation:turning_acw 3s infinite;
+  	animation:turning_acw 3s infinite; }
+
+  #center-circle {
+  	border: 10px solid #a0110c;
+  	border-bottom-color:#a0110c;
+  	-webkit-transform: rotate(360deg); 
+  	-moz-transform: rotate(360deg); 
+  	transform: rotate(360deg); 
+  	position:absolute;
+
+  	background: -webkit-linear-gradient(top, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
+  	background: -moz-linear-gradient(top, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
+  	background: linear-gradient(to bottom, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
+	
+  	margin: 10px;
+  	width: 140px;
+  	height: 140px;
+	
+  	-webkit-border-radius: 140px;
+  	-moz-border-radius: 140px;
+  	border-radius: 140px;
+	
+  	-webkit-animation:turning_cw 5s infinite;
+  	-moz-animation:turning_cw 5s infinite;
+  	animation:turning_cw 5s infinite; }
+
+  #content {
+  	position:absolute;
+  	top: 10px;
+  	left: 10px;
+  	width: 120px;
+  	height: 120px;
+  	-webkit-border-radius: 140px;
+  	-moz-border-radius: 140px;
+  	border-radius: 140px;
+  	background: #a0110c; 
+  	text-align:center;
+  	line-height: 120px;
+  	font-size: 30px;
+  	color:#746EBB;
+  	text-shadow: 0 2px 2px #000;
+  	font-weight:bold; }
+
+  @-webkit-keyframes aura {
+  	0%{
+  		text-shadow: 0 2px 2px #000; }
+  		
+  	50%{
+  		text-shadow: 0 10px 10px #000;
+  		line-height: 190px; }
+  		
+  	100%{
+  		text-shadow: 0 2px 10px #000; }
+  }
+
+  @-webkit-keyframes turning_cw {
+  	0%{
+  		-webkit-transform: rotate(0deg); }
+  	100%{
+  		-webkit-transform: rotate(360deg); }
+  }
+  
+  @-webkit-keyframes turning_acw {
+  	0%{
+  		-webkit-transform: rotate(360deg); }
+  	100%{
+  		-webkit-transform: rotate(0deg); }
+  }
+
+  @-moz-keyframes aura {
+  	0%{
+  		text-shadow: 0 2px 2px #000; }
+  		
+  	50%{
+  		text-shadow: 0 10px 10px #000;
+  		line-height: 190px; }
+  		
+  	100%{
+  		text-shadow: 0 2px 10px #000; }
+  }
+
+  @-moz-keyframes turning_cw {
+  	0%{
+  		-moz-transform: rotate(0deg); }
+  	100%{
+  		-moz-transform: rotate(360deg); }
+  }
+  
+  @-moz-keyframes turning_acw {
+  	0%{
+  		-moz-transform: rotate(360deg); }
+  	100%{
+  		-moz-transform: rotate(0deg); }
+  }
+
+  @keyframes aura {
+  	0%{
+  		text-shadow: 0 2px 2px #000; }
+  		
+  	50%{
+  		text-shadow: 0 10px 10px #000;
+  		line-height: 190px; }
+  		
+  	100%{
+  		text-shadow: 0 2px 10px #000; }
+  }
+
+  @keyframes turning_cw {
+  	0%{
+  		transform: rotate(0deg); }
+  	100%{
+  		transform: rotate(360deg); }
+  }
+  
+  @keyframes turning_acw {
+  	0%{
+  		transform: rotate(360deg); }
+  	100%{
+  		transform: rotate(0deg); }
+  }
+  
+.pulse2 {
+	-webkit-animation: pulse2 1s linear infinite;
+	-moz-animation: pulse2 1s linear infinite;
+	-ms-animation: pulse2 1s linear infinite;
+	animation: pulse2 1s linear infinite;
+}
+
+@keyframes "pulse2" {
+ 0% {
+    -webkit-transform: scale(1.1);
+   	-moz-transform: scale(1.1);
+   	-o-transform: scale(1.1);
+   	-ms-transform: scale(1.1);
+   	transform: scale(1.1);
+ }
+ 50% {
+    -webkit-transform: scale(0.8);
+   	-moz-transform: scale(0.8);
+   	-o-transform: scale(0.8);
+   	-ms-transform: scale(0.8);
+   	transform: scale(0.8);
+ }
+ 100% {
+    -webkit-transform: scale(1);
+   	-moz-transform: scale(1);
+   	-o-transform: scale(1);
+   	-ms-transform: scale(1);
+   	transform: scale(1);
+ }
+
+}
+
+@-moz-keyframes pulse2 {
+ 0% {
+   -moz-transform: scale(1.1);
+   transform: scale(1.1);
+ }
+ 50% {
+   -moz-transform: scale(0.8);
+   transform: scale(0.8);
+ }
+ 100% {
+   -moz-transform: scale(1);
+   transform: scale(1);
+ }
+
+}
+
+@-webkit-keyframes "pulse2" {
+ 0% {
+   -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+ }
+ 50% {
+   -webkit-transform: scale(0.8);
+   transform: scale(0.8);
+ }
+ 100% {
+   -webkit-transform: scale(1);
+   transform: scale(1);
+ }
+
+}
+
+@-ms-keyframes "pulse2" {
+ 0% {
+   -ms-transform: scale(1.1);
+   transform: scale(1.1);
+ }
+ 50% {
+   -ms-transform: scale(0.8);
+   transform: scale(0.8);
+ }
+ 100% {
+   -ms-transform: scale(1);
+   transform: scale(1);
+ }
+
+}
+
+.pagetap {
+    padding-bottom:10%;
+	margin-top:30%;
+	width: 100%;
+	top:        center;
+	bottom:       center;
+	height:     100%;
+	background : red;
+	font-family:'Open Sans', Arial, sans-serif;
+	}
+
+.texta { 
+    padding-top:10%;
+    padding-bottom:10%;
+	width: 100%;
+	top:        center;
+	bottom:       center;
+	height:     100%;
+	width:      100%;
+	font-family:'Open Sans', Arial, sans-serif;
+			
+}
+#nav_fr {
+	list-style:none;
+	color : #453D9B;
+	font-weight:bold;
+}
+.close_mod {
+	top:10px;
+	right:0px;
+	width:100%;
+	font-weight:bolder;
+	margin-right:10px;
+	position:relative;
+	background: linear-gradient(141deg, blue, silver, green);
+	padding-right: 10px; 
+	padding-left: 10px; 
+	padding-top: 10px; 
+	padding-bottom: 10px; 
+	cursor:pointer;
+		
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+ input[type="text"],input[type="button"]{
+ text-align : center;
+ padding-left:10%;
+ padding-right:10%;
+ margin-top:60%;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: none;
+  height:50px;
+  border-bottom: 1px solid #999;
+  outline: none;
+  color: #333;
+  -webkit-transition: border-color .5s ease;
+  transition: border-color .5s ease;
+  position:absolut;
+}
+.tombolya {
+	padding-top: 10px; 
+	padding-bottom: 10px;
+	background: #09F;
+	width:100%;
+	text-align:center;
+	color:#fff;
+	font-weight:bold;
+	cursor:pointer;
+	float : left;
+	font-family:calibri;
+}
+.linklin {
+	background: linear-gradient(141deg, #b63b1e, #021110, green);
+	margin-top: 5px; 
+	margin-right: 5px; 
+	margin-bottom: 5px; 
+	padding-left: 10px; 
+	padding-bottom: 10px;
+	text-align:center;
+	color:#1ef3eb;
+	font-weight:bold;
+	cursor:pointer;
+	float : left;
+	width:100%;
+	font-family:calibri;
+}
+.desk {
+	padding-top: 10px; 
+	padding-bottom: 10px;
+	background: #6d26e4;
+	width:100%;
+	text-align:center;
+	color:#fff;
+	font-weight:bold;
+	cursor:pointer;
+	float : left;
+	font-family:'Open Sans', Arial, sans-serif;
+}
+ul {
+	list-style-type : none;
+	margin:0;
+	padding:0;
+	width:100%;
+	background-color : #f1f1f1;
+	border : 1px solid #555;
+}
+li a {
+	display:block;
+	color : #000;
+	padding : 4px 8px;
+	text-decoration : none;
+}
+li a.active {
+	background-color:#4CAF50;
+	color : #fff;
+}
+li a:hover:not(.active) {
+	background-color:#555;
+	color : #fff;
+}
+li {
+	text-align : left;
+	border-bottom : 1px solid $555;
+	
+}
+li:last-child {
+	border-bottom : none;
+}
+	</style>
+	<script>
+	$(document).on("mobileinit", function(){
+			  //apply overrides here
+			  $.mobile.allowCrossDomainPages = true;
+			  $.support.cors = true;
+			
+			});
+	function send_data(r){
+				var phone_num = window.localStorage.getItem("Key");
+				
+				var url = "http://kelurahanstdi.or.id/simpan_sos.php?sender="+encodeURIComponent(phone_num)+"&tujuan="+encodeURIComponent(r);
+				$.ajax({
+					url		: url,
+					type	: "GET",
+					crossDomain : true,
+					success: function(data) {
+						alert(data);
+					}
+				});
+				
+			}
+	$(function(){
+		$( "#content" ).bind( "taphold", tapholdHandler );
+		function tapholdHandler( event ){
+			$( event.target ).addClass( "taphold" );
+			$("#modal").show();
+			$("#main").hide();
+			
+		}
+	});
+	function tutup(){
+		$("#modal").fadeOut();
+		clearInterval(intval);
+		$( "#content" ).unbind( "taphold", tapholdHandler );
+		$( event.target ).removeClass( "taphold" );
+	}
+	function get()
+	{
+		var phone_num = window.localStorage.getItem("Key");
+	}
+	
+	function set()
+	{
+		var textToWrite = $("#nomor_hp").val();
+		if (textToWrite.length < 12) {
+			$("#nomor_hp").focus();
+		}
+		else {
+			window.localStorage.setItem("Key", textToWrite);
+			$("#main").show();
+			$("#nama").hide();
+		}
+		
+	}
+	function isNumberKey(evt)
+			{
+				var charCode = (evt.which) ? evt.which : event.keyCode
+				if (charCode > 31 && (charCode < 48 || charCode > 57))
+				   return false;
+		       
+				return true;
+	}
+	window.onload = function cek(){
+		$("#modal").hide();
+		$("#nomor").hide();
+			var phone_num = window.localStorage.getItem("Key");
+			if (phone_num == null) {
+				$("#nama").show();
+				$("#main").hide();
+			}
+			else {
+				$("#main").show();
+				$("#nama").hide();
+			}
+	}
+	function del()
+	{
+	window.localStorage.removeItem("Key");
+	}
+	function home()
+	{
+		$("#modal").hide();
+		$("#nomor").hide();
+			var phone_num = window.localStorage.getItem("Key");
+			if (phone_num == null) {
+				$("#nama").show();
+				$("#main").hide();
+			}
+			else {
+				$("#main").show();
+				$("#nama").hide();
+			}
+	}
+	function selanjutnya()
+	{
+		$("#modal").hide();
+		$("#nomor").show();
+	}
+	</script>
+</head>
+<body oncontextmenu="return false" ondragstart="return false"  onselect="return false">
+   <span class="tombolya" style="margin:0"><strong>S.O.S EMERGENCY <BR>KELURAHAN STDI DUMAI</strong></span>
+  <div style="padding-top:25%"></div>
+  <div id="nama">
+	<input type="text" id="nomor_hp" onkeypress="return isNumberKey(event);" maxlength="12" placeholder="Masukkan No. Handphone" required>
+	<a class="tombolya" onclick="set()" >SIMPAN</a>
+  </div>
+  <div id="modal" class="pagetap">
+			<div class="tombolya" style="background:#24fcf9;color:#000000;padding-top:20px;padding-bottom:20px;">Terimakasih <br> telah menggunakan Layanan <br>
+			<span style="color:red;">S.O.S EMERGENCY</span> <br>Layanan ini dipersembahkan oleh <br>Kelurahan Simpang Tetap <br>Darul Ikhsan Dumai.</div>
+			<a class="tombolya" style="text-align:right;" onclick="selanjutnya()">Selanjutnya >>  &nbsp;</a>
+  </div>
+  <div id="nomor" class="texta">
+			<div class="tombolya" style="background:#24fcf9;color:#000000">Berikut Nomor-Nomor Penting : </div>
+			<ul >
+				<li><a  class="linklin" onclick="send_data('Bhabinkamtibmas STDI');" href="tel:085271745043">Bhabinkamtibmas STDI</a></li>
+				<li><a  class="linklin" onclick="send_data('Polsek Dumai Barat');" href="tel:081378946000">Polsek Dumai Barat</a></li>
+				<li><a  class="linklin" onclick="send_data('BPBD Dumai');" href="tel:076537622">BPBD Dumai</a></li>
+				<li><a  class="linklin" onclick="send_data('Pemadam Kebakaran');" href="tel:076538208">Pemadam Kebakaran</a></li>
+				<li><a  class="linklin" onclick="send_data('RSUD Dumai');" href="tel:076538367">RSUD Dumai</a></li>
+				<li><a  class="linklin" onclick="send_data('Trantib Kelurahan');" href="tel:081365100973">Trantib Kelurahan</a></li>
+			</ul>
+			<a class="tombolya" style="width:100%;" onclick="home()">Home </a>
+  </div>
+  <div id="container">    
+    <div id="main">
+      <div id="outer-circle">
+        <div id="inner-circle">
+          <div id="center-circle">
+            <div id="content" ><strong>S O S</strong></div>
+          </div>
+        </div>
+      </div>
+<span class="tombolya" style="margin:0"><strong>Sentuh S.O.S <br> Tahan beberapa detik </strong></span>
+    </div>
+  
+  </div>
+  
+   
+</body>
+</html>
