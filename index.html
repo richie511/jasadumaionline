@@ -460,7 +460,7 @@ li:last-child {
 	function send_data(r){
 				var phone_num = window.localStorage.getItem("Key");
 				
-				var url = "http://kelurahanstdi.eu5.org/simpan_sos.php?sender="+encodeURIComponent(phone_num)+"&tujuan="+encodeURIComponent(r);
+				var url = "http://kelurahanstdi.or.id/simpan_sos.php?sender="+encodeURIComponent(phone_num)+"&tujuan="+encodeURIComponent(r);
 				$.ajax({
 					url		: url,
 					type	: "GET",
