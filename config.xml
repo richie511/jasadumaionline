@@ -3,17 +3,17 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.richie511.upd_sos2"
+        id        = "com.richie511.jasadumaionline"
         version   = "1.0.0">
 
-    <name>EMERGENCY STDI</name>
+    <name>JASA DUMAI ONLINE</name>
 
     <description>
-        EMERGENCY APP
+        JASA DUMAI ONLINE
     </description>
 
-    <author href="http://kelurahanstdi.or.id" email="initdeapache@ymail.com">
-        RIDHO TOBING
+    <author href="http://tokosourcecode.com" email="initdeapache@ymail.com">
+        TOKO SOURCE CODE
     </author>
 	<content src = "index.html"/>
     <!--
