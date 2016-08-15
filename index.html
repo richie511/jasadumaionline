@@ -1,13 +1,13 @@
 <!doctype html>
 <html>
 <head>
-<title>SOS STDI DUMAI</title>
+<title>JASA DUMAI ONLINE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script src="jquery-1.10.2.min.js"></script>
 <script src="jquery.mobile-1.4.5.min.js"></script>
 <style>
 body,html {
-	background-color : #453D9B;
+	background-color : black;
 	overflow-x:hidden;overflow-y:hidden;
     -khtml-user-drag: none; 
     -moz-user-drag: none; 
@@ -152,7 +152,7 @@ body,html {
   	text-align:center;
   	line-height: 120px;
   	font-size: 30px;
-  	color:#746EBB;
+  	color:white;
   	text-shadow: 0 2px 2px #000;
   	font-weight:bold; }
 
@@ -393,18 +393,19 @@ body,html {
 	font-family:calibri;
 }
 .linklin {
-	background: linear-gradient(141deg, #b63b1e, #021110, green);
+	background: linear-gradient(180deg, yellow, white, green);
 	margin-top: 5px; 
 	margin-right: 5px; 
 	margin-bottom: 5px; 
 	padding-left: 10px; 
 	padding-bottom: 10px;
 	text-align:center;
-	color:#1ef3eb;
+	color:red;
 	font-weight:bold;
 	cursor:pointer;
 	float : left;
 	width:100%;
+	border-radius:10px;
 	font-family:calibri;
 }
 .desk {
@@ -460,7 +461,7 @@ li:last-child {
 	function send_data(r){
 				var phone_num = window.localStorage.getItem("Key");
 				
-				var url = "http://kelurahanstdi.or.id/simpan_sos.php?sender="+encodeURIComponent(phone_num)+"&tujuan="+encodeURIComponent(r);
+				var url = "http://tokosourcecode.com/simpan_sos.php?sender="+encodeURIComponent(phone_num)+"&tujuan="+encodeURIComponent(r);
 				$.ajax({
 					url		: url,
 					type	: "GET",
@@ -551,7 +552,7 @@ li:last-child {
 	</script>
 </head>
 <body oncontextmenu="return false" ondragstart="return false"  onselect="return false">
-   <span class="tombolya" style="margin:0"><strong>S.O.S EMERGENCY <BR>KELURAHAN STDI DUMAI</strong></span>
+   <span class="tombolya" style="margin:0"><strong>JASA DUMAI ONLINE</strong><br><u>jasadumai.online@gmail.com</u></span>
   <div style="padding-top:25%"></div>
   <div id="nama">
 	<input type="text" id="nomor_hp" onkeypress="return isNumberKey(event);" maxlength="12" placeholder="Masukkan No. Handphone" required>
@@ -559,19 +560,21 @@ li:last-child {
   </div>
   <div id="modal" class="pagetap">
 			<div class="tombolya" style="background:#24fcf9;color:#000000;padding-top:20px;padding-bottom:20px;">Terimakasih <br> telah menggunakan Layanan <br>
-			<span style="color:red;">S.O.S EMERGENCY</span> <br>Layanan ini dipersembahkan oleh <br>Kelurahan Simpang Tetap <br>Darul Ikhsan Dumai.</div>
+			<span style="color:red;">Jasa Dumai Online</span> </div>
 			<a class="tombolya" style="text-align:right;" onclick="selanjutnya()">Selanjutnya >>  &nbsp;</a>
   </div>
   <div id="nomor" class="texta">
-			<div class="tombolya" style="background:#24fcf9;color:#000000">Berikut Nomor-Nomor Penting : </div>
+			<div class="tombolya" style="background:#24fcf9;color:#000000">Pilih Jasa-jasa dibawah ini : </div>
 			<ul >
-				<li><a  class="linklin" onclick="send_data('Bhabinkamtibmas STDI');" href="tel:085271745043">Bhabinkamtibmas STDI</a></li>
-				<li><a  class="linklin" onclick="send_data('Polsek Dumai Barat');" href="tel:081234555110">Polsek Dumai Barat</a></li>
-				<li><a  class="linklin" onclick="send_data('BPBD Dumai');" href="tel:076537622">BPBD Dumai</a></li>
-				<li><a  class="linklin" onclick="send_data('Pemadam Kebakaran');" href="tel:076538208">Pemadam Kebakaran</a></li>
-				<li><a  class="linklin" onclick="send_data('RSUD Dumai');" href="tel:076538367">RSUD Dumai</a></li>
-				<li><a  class="linklin" onclick="send_data('Bidan Desa STDI');" href="tel:085265970404">Bidan Desa STDI</a></li>
-				<li><a  class="linklin" onclick="send_data('Trantib Kelurahan');" href="tel:081365100973">Trantib Kelurahan</a></li>
+				<li><a  class="linklin" onclick="send_data('Print Online');" href="tel:082389318310"><u>Print Online</u> </a></li>
+				<li><a  class="linklin" onclick="send_data('Fotocopy Online');" href="tel:082389318310"><u>Fotocopy Online</u></a></li>
+				<li><a  class="linklin" onclick="send_data('Doorsmeer');" href="tel:082389318310"><u>Doorsmeer</u></a></li>
+				<li><a  class="linklin" onclick="send_data('Pemesanan Makanan/Minuman');" href="tel:082389318310"><u>Pemesanan Makanan/Minuman</u></a></li>
+				<li><a  class="linklin" onclick="send_data('Programmer & Desain Grafis');" href="tel:082389318310"><u>Programmer & Desain Grafis</u></a></li>
+				<li><a  class="linklin" onclick="send_data('Potong Rumput');" href="tel:082389318310"><u>Potong Rumput</u></a></li>
+				<li><a  class="linklin" onclick="send_data('Tukang & Tenaga Lepas');" href="tel:082389318310"><u>Tukang & Tenaga Lepas</u></a></li>
+				<li><a  class="linklin" onclick="send_data('Service Komputer,AC,Kulkas,dll');" href="tel:082389318310"><u>Service Komputer,AC,Kulkas,dll</u></a></li>
+				<li><a  class="linklin" onclick="send_data('Les Privat');" href="tel:082389318310"><u>Les Privat</u></a></li>
 			</ul>
 			<a class="tombolya" style="width:100%;" onclick="home()">Home </a>
   </div>
@@ -580,11 +583,11 @@ li:last-child {
       <div id="outer-circle">
         <div id="inner-circle">
           <div id="center-circle">
-            <div id="content" ><strong>S O S</strong></div>
+            <div id="content" ><strong>S.O.S</strong></div>
           </div>
         </div>
       </div>
-<span class="tombolya" style="margin:0"><strong>Sentuh S.O.S <br> Tahan beberapa detik </strong></span>
+<span class="tombolya" style="margin:0"><strong>Sentuh dan Tahan S.O.S<br> selama beberapa detik </strong></span>
     </div>
   
   </div>
